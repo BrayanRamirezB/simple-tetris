@@ -1,0 +1,33 @@
+---
+import '@/styles/global.css'
+import '@fontsource-variable/onest'
+import Background from '@/components/Background.astro'
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <title>Simple Tetris</title>
+  </head>
+  <body class='relative'>
+    <Background />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @config '../../tailwind.config.mjs';
+  :root {
+    font-family: 'Onest Variable';
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overscroll-behavior: none;
+    overflow-x: hidden;
+  }
+</style>
